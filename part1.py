@@ -9,4 +9,6 @@ print(df)
 
 df['salary'] = df['salary'].str.replace(',', '').astype(float)
 result = df.groupby(['region', 'jobTitleName'])['salary'].mean()
+
+# to generate output file with the result
 result.to_json('average_salary.json')
